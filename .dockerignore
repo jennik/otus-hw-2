@@ -1,0 +1,6 @@
+/var/
+/vendor/
+/docker/
+/kubernetes/
+/public/bundles/
+/.idea/
