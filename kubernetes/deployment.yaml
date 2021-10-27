@@ -15,7 +15,8 @@ spec:
                 app: otus-hw-1
         spec:
             containers:
-                - image: jennik/otus-hw-1
+                - image: jennik/otus-hw-1:all-arch
                   name: otus-hw-one
+                  imagePullPolicy: Always
                   ports:
                       - containerPort: 8000
