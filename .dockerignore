@@ -1,6 +1,7 @@
 /var/
 /vendor/
 /docker/
+!/docker/php/xdebug.ini
 /kubernetes/
 /public/bundles/
 /.idea/
