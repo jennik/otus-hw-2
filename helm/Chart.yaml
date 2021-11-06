@@ -1,0 +1,23 @@
+apiVersion: v2
+name       : Otus-hw-2
+description: My Helm chart for Kubernetes
+type       : application
+version    : 0.1.0
+appVersion : 0.2.0
+
+keywords:
+  - php
+  - otus
+  - homework
+  - architect
+
+maintainers:
+  - name : Evgeny Nikitenko
+    email: evg@jennik.ru
+    url  : jennik.ru
+
+dependencies:
+  - name: postgres
+    version: 0.1.0
+    repository: https://nicholaswilde.github.io/helm-charts/
+    condition: postgres.enabled

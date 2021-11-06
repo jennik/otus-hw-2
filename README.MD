@@ -2,5 +2,5 @@
 
 ### Запустить можно так: ###
 ```angular2html
-cd kubernetes && kubectl apply -f .
+cd helm && helm dependency update && helm install otus-hw-2 .
 ```

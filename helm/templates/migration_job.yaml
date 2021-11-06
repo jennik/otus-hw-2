@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-migrations
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      initContainers:
+        - name: wait-for-postgres
+          image: "groundnuty/k8s-wait-for:1.3"
+          imagePullPolicy: Always
+          args:
+            - pod
+            - "-lapp.kubernetes.io/name=postgres"
+      containers:
+        - name: db-migrations
+          image: {{ .Values.container.image }}
+          command: ["bin/console", "doctrine:migrations:migrate", "--no-interaction"]
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-configmap
+            - secretRef:
+                name: {{ .Release.Name }}-secret

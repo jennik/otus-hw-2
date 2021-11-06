@@ -5,3 +5,4 @@
 /kubernetes/
 /public/bundles/
 /.idea/
+/.helm/
