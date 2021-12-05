@@ -1,6 +1,0 @@
-dependencies:
-- name: postgres
-  repository: https://nicholaswilde.github.io/helm-charts/
-  version: 0.1.0
-digest: sha256:01479890b28fc9b5a86a1ed917067558c60716dededa3a2695644bd330798044
-generated: "2021-11-06T15:26:31.050205+03:00"

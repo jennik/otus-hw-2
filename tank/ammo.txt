@@ -1,0 +1,6 @@
+[Host: arch.homework]
+[Connection: close]
+[User-Agent: Tank]
+[Content-Type: application/json]
+124 /users
+{"username": "Annetta91","firstName": "Titus","lastName": "Friesen","email": "Brice36@hotmail.com","phone":"3-757-766-3730"}

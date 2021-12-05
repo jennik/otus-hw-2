@@ -4,6 +4,10 @@ RUN apk update && \
     apk add postgresql-dev && \
     docker-php-ext-install pdo pdo_pgsql pgsql
 
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && pecl install apcu \
+    && docker-php-ext-enable apcu \
+    && apk del .build-deps
+
 #RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && pecl install xdebug \
 #    && docker-php-ext-enable xdebug \
 #    && apk del .build-deps
@@ -26,4 +30,4 @@ RUN composer dump-autoload && composer run-script post-install-cmd
 
 EXPOSE 8000
 
-CMD ["php", "-S=0.0.0.0:8000", "-t=public/"]
+CMD ["php", "-S=0.0.0.0:8000", "-d max_execution_time=1", "-t=public/"]

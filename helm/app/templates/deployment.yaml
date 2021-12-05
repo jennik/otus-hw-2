@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: {{ .Release.Name }}-api
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:

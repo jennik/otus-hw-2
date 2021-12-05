@@ -1,0 +1,33 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: token.txt
+phantom:
+  address: host.docker.internal
+  header_http: '1.1'
+  headers:
+    - "[Host: arch.homework]"
+    - "[Connection: close]"
+  ammofile: ammo.txt
+  ammo_type: uripost
+#  uris:
+#    - /users/1
+#    - /users/2
+#    - /users/3
+#    - /users/4
+#    - /users/5
+#    - /users/6
+#    - /users/7
+#    - /users/8
+#    - /users/9
+  load_profile:
+    load_type: rps
+    schedule: line(20, 40, 10m)
+  ssl: false
+autostop:
+  autostop:
+    - http(5xx, 10%, 5m)
+console:
+  enabled: true
+telegraf:
+  enabled: false

@@ -1,0 +1,28 @@
+ingress:
+  host: arch.homework
+
+container:
+  image: jennik/otus-hw:3
+
+postgres:
+  enabled: true # to disable postgress set it to false
+  env:
+    POSTGRES_USER: web-user
+    POSTGRES_DB: users-db
+    POSTGRES_PASSWORD: "12345"
+
+prometheus:
+  enabled: true # to disable prometheus set it to false
+  prometheus:
+    prometheusSpec:
+      serviceMonitorSelectorNilUsesHelmValues: false
+      serviceMonitorSelector: {}
+
+nginx:
+  enabled: true
+  controller:
+    replicaCount: 2
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true

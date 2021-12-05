@@ -1,0 +1,12 @@
+dependencies:
+- name: postgres
+  repository: https://nicholaswilde.github.io/helm-charts/
+  version: 0.1.0
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts/
+  version: 21.0.3
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx/
+  version: 3.40.0
+digest: sha256:22d0d423c4a324f59e53ce6bfafd3e447a19a4c5c5c6db110abd17fd2868831d
+generated: "2021-12-05T18:32:00.185832+03:00"

@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: {{ .Release.Name }}-service
+    release: {{ .Release.Name }}
   name: {{ .Release.Name }}-service
 spec:
   ports:
